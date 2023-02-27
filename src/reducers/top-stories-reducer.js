@@ -8,6 +8,12 @@ const topStoriesReducer = (state, action) => {
         isLoaded: true,
         topStories: action.topStories
       };
+      case c.GET_TOP_STORIES_FAILURE:
+        return {
+          ...state,
+          isLoaded: true,
+          error: action.error
+        };
     default:
       throw new Error(`There is no action matching ${action.type}.`);
   }
